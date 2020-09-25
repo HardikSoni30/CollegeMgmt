@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: h.soni@yahoo.co.in
+Date: Sat, 19 Sep 2020 17:04:06 -0000
+Message-ID: <160053504655.9544.15028365522260174395@Laptop_HSoni>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/MQ/aagxcu-050d9ce54772b0ea2c20d2a2e2e1e3ca/
+
+Your username, in case you’ve forgotten: h.soni@yahoo.co.in
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

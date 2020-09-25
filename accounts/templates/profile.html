@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+{% bootstrap_javascript jquery=True %}
+{% block title %}Profile{% endblock %}
+{% block extrahead %}
+{{ form.media }}
+{% endblock %}
+{% block content %}
+
+
+{% if messages %}
+{% bootstrap_messages %}
+{% endif %}
+<h2>Profile View for {{ request.user|default_if_none:"" }}</h2>
+{#{% if form.errors %}#}
+{#    <div class="alert alert-error alert-dismissible fade show" role="alert">#}
+{#        <button type="button" class="close" data-dismiss="alert">×</button>#}
+{#        {% for field in form %}#}
+{#            {% if field.errors %}#}
+{#            <li>{{ field.label }}: {{ field.errors|striptags }}</li>#}
+{#            {% endif %}#}
+{#        {% endfor %}#}
+{#    </div>#}
+{#{% endif %}#}
+{% if form.instance.user == request.user %}
+    <form method="post" enctype="multipart/form-data" class="col-md-6 mb-0" >
+      {% csrf_token %}
+      {% if form.errors %}
+        {% bootstrap_form_errors form layout='inline' %}
+      {% endif %}
+      {% bootstrap_form form layout="horizontal" %}
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+{% else %}
+    <h3> Access Restricted, You Are Not Allowed!! </h3>
+{% endif %}
+{% endblock %}
+

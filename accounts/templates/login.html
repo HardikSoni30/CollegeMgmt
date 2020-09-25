@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% url 'accounts:login' as login %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+    <div class="col-md-10 col-lg-8">
+    <h2 class="text-center col-6 mb-4"> Login </h2>
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <a href="{{ login }}">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </a>
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post" class="form-group border rounded col-md-6 p-2">
+      {% csrf_token %}
+      {{ form|crispy}}
+        <p class="small mt-n2 text-right">
+            <a href="{% url 'password_reset' %}">
+            Forget Password?
+            </a>
+        </p>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary col-12">Sign-In</button>
+      </div>
+    </form>
+    <div class="d-flex text-muted small col-md-8 col-lg-6">
+        <span class="flex-fill border-top" style="margin-top:1.1rem;"></span>
+        <p class="my-1 px-2">New to System?</p>
+        <span class="flex-fill border-top" style="margin-top:1.1rem;"></span>
+    </div>
+
+    <div class=" mx-auto mb-5">
+    <p class="col-lg-6 mt-2 text-center"><a href="{% url 'accounts:signup' %}" class="btn btn-secondary border ">Create Your Account »</a></p>
+    </div>
+
+    </div>
+    </div>
+
+{% endblock %}
