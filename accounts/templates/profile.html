@@ -13,7 +13,10 @@
 {% bootstrap_messages %}
 {% endif %}
 <div class="d-flex justify-content-center align-items-center container">
-<h2>Profile View for {{ request.user|default_if_none:"" }}</h2>
+<h2>{{ request.user|default_if_none:"" }}</h2>
+<span class="text-muted mx-1"> <i class="fas fa-user-edit fa-2x "></i> </span>
+
+{#<h2>Profile View for {{ request.user|default_if_none:"" }}</h2>#}
 </div>
 {#{% if form.errors %}#}
 {#    <div class="alert alert-error alert-dismissible fade show" role="alert">#}

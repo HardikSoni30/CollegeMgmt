@@ -14,7 +14,7 @@
   <a href="{% url 'accounts:logout' %}">logout</a></p>
 {% else %}
   <p>You are not logged in</p>
-  <a href="{% url 'accounts:login' %}">login</a> |
-  <a href="{% url 'accounts:signup' %}">signup</a>
+  <a href="{% url 'accounts:login' %}"><i class="fas fa-sign-in-alt fa-2x text-primary"></i></a> |
+  <a href="{% url 'accounts:signup' %}"><i class="fas fa-user-plus fa-2x text-warning"></i></a>
 {% endif %}
 {% endblock %}
