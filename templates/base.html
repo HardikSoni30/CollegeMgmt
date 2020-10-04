@@ -9,8 +9,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
 <!--    Font Awesome Icons-->
     <script src="https://kit.fontawesome.com/ce317667c3.js" crossorigin="anonymous"></script>
     <title>
@@ -30,8 +30,8 @@
 {% block content %} {% endblock %}
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script  src="js/jquery-3.5.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.js"> </script>
+<script  src="{% static 'js/jquery-3.5.1.min.js'%}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"> </script>
 </body>
 </html>
