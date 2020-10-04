@@ -1,19 +1,52 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {#{% load bootstrap4 %}#}
-{% block title %}Sign Up{% endblock %}
+
+{% block title %} Register Account {% endblock %}
+
+{% block content %}
+<section id="register" class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4>
+                            <i class="fas fa-user-plus"></i> Register</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Alerts -->
+                        {% include 'partials/_alerts.html' %}
+
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <input type="submit" value="Register" class="btn btn-secondary btn-block">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{#{% block title %}Sign Up{% endblock %}#}
 {#{% block extrahead %}#}
 {#{{ form.media }}#}
 {#{% endblock %}#}
-{% block content %}
-    <h2 class="text-center mb-4">Create Your Account</h2>
-    <div class="d-flex justify-content-center align-items-center container">
-        <form method="post" class="form-group p-2 border rounded">
-          {% csrf_token %}
-            {{ form|crispy }}
+{#{% block content %}#}
+{#    <div class="card">#}
+{#    <h4 class="text-center py-5 mb-2"><i class="fas fa-user-plus"></i>Register</h4>#}
+{#    </div>#}
+{##}
+{#    <div class="d-flex justify-content-center align-items-center container">#}
+{#        <form method="post" class="form-group p-2 border rounded">#}
+{#          {% csrf_token %}#}
+{#            {{ form|crispy }}#}
         {#  {% bootstrap_form form %}#}
-          <button type="submit" class="btn btn-primary col-12 mb-2">Sign up</button>
-        </form>
-    </div>
-
-{% endblock %}
+{#          <button type="submit" class="btn btn-primary col-12 mb-2">Sign up</button>#}
+{#        </form>#}
+{#    </div>#}
+{##}
+{#{% endblock %}#}

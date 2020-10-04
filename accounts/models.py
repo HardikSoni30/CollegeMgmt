@@ -9,7 +9,7 @@ from django.urls import reverse
 from django.utils import timezone
 from random import randint
 from .managers import UserManager
-from .choices import *
+from util.choices import *
 from .validators import validate_image, validate_age
 
 

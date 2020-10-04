@@ -1,9 +1,9 @@
 {% load static %}
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="{% url 'index' %}">
+        <a class="navbar-brand" href="">
             <img src="{% static '/img/logo.png' %}" class="logo" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
@@ -18,16 +18,16 @@
                         class="nav-item mr-3"
                     {% endif %}
                 >
-                    <a class="nav-link" href="{% url 'index' %}">Home</a>
+                    <a class="nav-link" href="">Home</a>
                 </li>
-                <li 
-                    {% if 'about' in request.path %}
+                <li
+                    {% if 'profile' in request.path %}
                         class="nav-item active mr-3"
                     {% else %}
                         class="nav-item mr-3"
                     {% endif %}
                 >
-                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                    <a class="nav-link" href="">Profile</a>
                 </li>
                 <li 
                     {% if 'listings' in request.path %}
@@ -36,7 +36,7 @@
                         class="nav-item mr-3"
                     {% endif %}
                 >
-                    <a class="nav-link" href="{% url 'listings' %}">Featured Listings</a>
+                    <a class="nav-link" href="">Featured Listings</a>
                 </li>
             </ul>
 
@@ -49,7 +49,7 @@
                             class="nav-item mr-3"
                         {% endif %}
                     >
-                        <a class="nav-link" href="{% url 'dashboard' %}">
+                        <a class="nav-link" href="">
                             Welcome {{ user.username }} (Dashboard)</a>
                     </li>
                     <li class="nav-item mr-3">
@@ -63,13 +63,13 @@
                     </li>
                 {% else %}
                     <li
-                        {% if 'register' in request.path %}
+                        {% if 'signup' in request.path %}
                             class="nav-item active mr-3"
                         {% else %}
                             class="nav-item mr-3"
                         {% endif %}
                     >
-                        <a class="nav-link" href="{% url 'register' %}">
+                        <a class="nav-link" href="{% url 'accounts:signup' %}">
                             <i class="fas fa-user-plus"></i> Register</a>
                     </li>
                     <li
@@ -79,7 +79,7 @@
                             class="nav-item mr-3"
                         {% endif %}
                     >
-                        <a class="nav-link" href="{% url 'login' %}">
+                        <a class="nav-link" href="{% url 'accounts:login' %}">
                             <i class="fas fa-sign-in-alt"></i>
 
                             Login</a>
