@@ -8,10 +8,11 @@
 {% endblock %}
 {% block content %}
 
-
 {% if messages %}
 {% bootstrap_messages %}
 {% endif %}
+
+<section id="login" class="bg-light py-5">
 <div class="d-flex justify-content-center align-items-center container">
 <h2>{{ request.user|default_if_none:"" }}</h2>
 <span class="text-muted mx-1"> <i class="fas fa-user-edit fa-2x "></i> </span>
@@ -42,5 +43,6 @@
 {% else %}
     <h3> Access Restricted, You Are Not Allowed!! </h3>
 {% endif %}
+</section>
 {% endblock %}
 
